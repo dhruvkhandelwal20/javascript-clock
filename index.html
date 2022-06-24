@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="This is a Dynamically Running Web Clock with the help of Javascript. The Clock Diplays the Current Times & Dates of all countries around the Globe with Different Time Zones."
+    />
+    <meta name="author" content="Dhruv Khandelwal" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>WEB CLOCK</title>
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="./Favicon/Time-Zones-icon.png"
+    />
+
+    <style>
+      body {
+        background-color: tan;
+        overflow-y: hidden;
+      }
+    </style>
+    <script>
+      let a;
+      let date;
+      let time;
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      setInterval(() => {
+        a = new Date();
+        date = a.toLocaleDateString(undefined, options);
+        time =
+          (a.getHours() < 10 ? `0${a.getHours()}` : a.getHours()) +
+          ":" +
+          (a.getMinutes() < 10 ? `0${a.getMinutes()}` : a.getMinutes()) +
+          ":" +
+          (a.getSeconds() < 10 ? `0${a.getSeconds()}` : a.getSeconds());
+        document.getElementById("time").innerHTML = time + "</br>on " + date;
+      }, 1000);
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
+        style="margin-bottom: 6%"
+      >
+        <a class="navbar-brand" href="#" style="color: darkkhaki">WEB CLOCK</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" style="color: lightblue"
+                >Home<span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: cyan">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                style="color: lavenderblush"
+              >
+                Dropdown
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+                style="background-color: darkseagreen"
+              >
+                <a class="dropdown-item" href="#">Sign Up</a>
+                <a class="dropdown-item" href="#">Login</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"
+                  >Wanna Delete Your Account? Click here.</a
+                >
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn my-2 my-sm-0"
+              type="submit"
+              style="background-color: cornflowerblue"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="container my-4">
+          <div class="jumbotron" style="background-color: rosybrown">
+            <h1 class="display-4">Current Time: <span id="time"></span></h1>
+            <p>
+              We have got you covered. <br />
+              This is the Web Clock showing current Time & Date w.r.t different
+              Time Zones.
+            </p>
+            <hr class="my-2" />
+            <p>We are here to provide you the times of different countries.</p>
+            <p class="lead">
+              <a
+                class="btn btn-lg bg-dark"
+                href="#"
+                role="button"
+                style="color: #ccc"
+                >Browse Times</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
